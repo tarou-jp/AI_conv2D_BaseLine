@@ -1,0 +1,45 @@
+skeleton_attention_model/
+│
+├── data/                     # データファイルや動画を格納
+│
+├── models/                   # モデル定義ファイル
+│   ├── __init__.py
+│   ├── skeleton_estimator.py # 骨格推定モデル
+│   ├── attention_model.py    # アテンションモデル
+│   └── layers/               # モデル層のカスタマイズ
+│       ├── __init__.py
+│       ├── convolutional_layers.py
+│       ├── recurrent_layers.py
+│       └── attention_layers.py
+│
+├── processors/               # データ処理用のモジュール
+│   ├── __init__.py
+│   ├── video_processor.py    # 動画データの前処理を担当
+│   ├── data_cleansing.py     # データクリーニング
+│   ├── feature_extractor.py  # 特徴抽出
+│   └── data_augmentation.py  # データ拡張
+│
+├── trainers/                 # トレーニングプロセス管理
+│   ├── __init__.py
+│   ├── trainer.py            # モデルのトレーニングを管理
+│   └── scheduler.py          # 学習率スケジューリングなどを管理
+│
+├── inference/                # 推論プロセス管理
+│   ├── __init__.py
+│   ├── inference_engine.py   # 推論エンジン
+│   └── result_processor.py   # 推論結果の後処理
+│
+├── utils/                    # ヘルパー関数やユーティリティ関数
+│   ├── __init__.py
+│   ├── config.py             # 設定ファイル
+│   ├── logger.py             # ロギング機能
+│   └── metrics.py            # 評価指標関数
+│
+├── output_data/              # 推定結果や中間データを保存
+│
+├── logs/                     # ログファイルを保存
+│
+├── scripts/                  # 一括処理やユーティリティスクリプト
+│   ├── batch_process.py      # 複数の動画に対して骨格推定を行うスクリプト
+│
+└── main.py                   # アプリケーションのエントリーポイント
